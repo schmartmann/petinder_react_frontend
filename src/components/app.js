@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchMyPet } from '../actions/index';
+import Pet from "./pet.js"
+
 
 function mapStateToProps(state){
   return {
@@ -16,31 +18,12 @@ function mapDispatchToProps(dispatch){
   }, dispatch)
 }
 
+
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.props.fetchMyPet();
-  };
-  componentWillMount(){
-  };
   render() {
     return (
       <div>
-      <div>Your Pleasant Ghost evironment is set up correctly.</div>
-      <ul>
-        <li>
-          {this.props.pet.name}
-        </li>
-        <li>
-          <img src={this.props.pet.picture}></img>
-        </li>
-        <li>
-          {this.props.pet.description}
-        </li>
-        <li>
-          {this.props.pet.link}
-        </li>
-      </ul>
+        <Pet/>
       </div>
     );
   }
