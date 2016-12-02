@@ -13,13 +13,15 @@ body {
   font-size: 0.75em;
 }
 
+
 .nav-items {
   background-color: white;
   box-shadow: none;
+  border: 1px solid black;
 }
 
 .nav-items ul {
-  left: 50%;
+  border: 1px solid black;
 }
 
 .nav-items a, .nav-items h1{
