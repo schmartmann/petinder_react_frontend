@@ -31,10 +31,12 @@ class Pet extends Component{
             {this.props.pet.name}
         </h3>
         <p id="pet-description">
-          {this.props.pet.description}
+          <i>
+            {this.props.pet.description}
+          </i>
         </p>
         <p>
-          {this.props.pet.link}
+          <a href={this.props.pet.link}>View Profile</a>
         </p>
       </div>
     )
