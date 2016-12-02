@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchMyPet } from '../actions/index';
 import Pet from "./pet.js"
 import Navbar from "./navbar.js"
+import Icons from "./icons.js"
 
 function mapStateToProps(state){
   return {
@@ -25,6 +26,9 @@ class App extends Component {
       <div>
         <Navbar/>
         <Pet/>
+        <div className="icons-row">
+          <Icons/>
+        </div>
       </div>
     );
   }
