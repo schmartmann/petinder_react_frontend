@@ -20,14 +20,24 @@ function mapDispatchToProps(dispatch){
 class Pet extends Component{
   constructor(props){
     super(props);
+    this.state = {
+      truncateDesc: true
+    }
     this.props.fetchMyPet();
-    // this.props.getPets();
+    this.untruncate = this.untruncate.bind(this);
+    this.truncate = this.truncate.bind(this);
   };
   componentWillMount(){
   };
   componentDidMount(){
     console.log("current props", this.props)
-  }
+  };
+  truncate(){
+    this.setState({truncateDesc: true})
+  };
+  untruncate(){
+    this.setState({truncateDesc: false})
+  };
   render(){
     return(
       <div className="pet-card">
@@ -38,7 +48,7 @@ class Pet extends Component{
         <h6>
           {this.props.pet.current_pet.city}, {this.props.pet.current_pet.state}
         </h6>
-        <p id="pet-description">
+        <p id="pet-description" className={this.state.truncateDesc? "flow-text truncate" : "flow-text"} onClick={this.state.truncateDesc? this.untruncate : this.truncate}>
           <i>
             {this.props.pet.current_pet.description}
           </i>
