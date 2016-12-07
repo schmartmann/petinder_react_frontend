@@ -160,3 +160,22 @@ body {
     transform: scale(1.1);
   }
 }
+
+@media only screen and (min-width: 601px) {
+
+  nav {
+    margin: 0 -5%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  nav {
+    margin: 0 -11%;
+  }
+
+  #pet-icon {
+    margin: -10px 35%; 
+  }
+}
