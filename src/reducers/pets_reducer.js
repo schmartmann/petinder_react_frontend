@@ -18,7 +18,7 @@ export default function(state = INITIAL_STATE, action){
     case 'LOAD_PET':
       console.log("LOAD_PET firing: ", action.payload)
       let current_pet = action.payload.current_pet;
-      let pet_batch = action.payload.pet_batch[0];
+      let pet_batch = action.payload.pet_batch;
       return {
         current_pet: {
           animal: current_pet.animal,
@@ -30,7 +30,7 @@ export default function(state = INITIAL_STATE, action){
           photo: current_pet.photo,
           link: current_pet.link
         },
-        pet_batch: [pet_batch]
+        pet_batch: pet_batch
       };
     default:
       console.log("no pet loaded");
