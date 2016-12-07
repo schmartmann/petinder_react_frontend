@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchMyPet } from '../actions/index';
+import { fetchMyPet, getPets } from '../actions/index';
 
 function mapStateToProps(state){
   return {
@@ -12,7 +12,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators({
-    fetchMyPet: fetchMyPet
+    fetchMyPet: fetchMyPet,
+    getPets: getPets
   }, dispatch)
 }
 
@@ -20,23 +21,30 @@ class Pet extends Component{
   constructor(props){
     super(props);
     this.props.fetchMyPet();
+    // this.props.getPets();
   };
   componentWillMount(){
   };
+  componentDidMount(){
+    console.log("current props", this.props)
+  }
   render(){
     return(
       <div className="pet-card">
-        <img src={this.props.pet.picture}></img>
+        <img src={this.props.pet.current_pet.photo}></img>
         <h3>
-            {this.props.pet.name}
+            {this.props.pet.current_pet.name}
         </h3>
+        <h6>
+          {this.props.pet.current_pet.city}, {this.props.pet.current_pet.state}
+        </h6>
         <p id="pet-description">
           <i>
-            {this.props.pet.description}
+            {this.props.pet.current_pet.description}
           </i>
         </p>
         <p>
-          <a href={this.props.pet.link}>View Profile</a>
+          <a href={this.props.pet.current_pet.link}>View Profile</a>
         </p>
       </div>
     )

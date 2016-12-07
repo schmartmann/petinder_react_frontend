@@ -28,9 +28,12 @@
   "dependencies": {
     "axios": "^0.12.0",
     "babel-preset-stage-1": "^6.1.18",
+    "dotenv": "^2.0.0",
+    "fs": "0.0.1-security",
     "hover.css": "^2.0.2",
     "lodash": "^3.10.1",
     "materialize": "^1.0.0",
+    "petfinder": "^0.1.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",

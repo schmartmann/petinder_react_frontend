@@ -6,8 +6,7 @@ export default class Navbar extends Component {
       <div>
         <div className="nav-wrapper">
           <nav className="nav-items">
-            <img id="paw-icon" src="./style/icons/paw-icon.png"/>
-            <h1 className="brand-logo center"><span className="small-logo">pe</span>tinder</h1>
+            <img id="paw-icon" src="./style/icons/logo.png"/>
           </nav>
       </div>
     </div>

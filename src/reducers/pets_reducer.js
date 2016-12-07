@@ -1,22 +1,36 @@
 const INITIAL_STATE = {
-  name: '',
-  picture: '',
-  description: '',
-  pet_id: '',
-  link: ''
+    current_pet:
+      {
+        city: '',
+        state: '',
+        photo: '',
+        id: '',
+        link: '',
+        name: '',
+        description: '',
+        animal: ''
+      },
+    pet_batch: []
 }
 
 export default function(state = INITIAL_STATE, action){
   switch(action.type){
     case 'LOAD_PET':
       console.log("LOAD_PET firing: ", action.payload)
-      let pet_profile = action.payload
+      let current_pet = action.payload.current_pet;
+      let pet_batch = action.payload.pet_batch[0];
       return {
-        name: pet_profile.name,
-        picture: pet_profile.picture,
-        description: pet_profile.description,
-        pet_id: pet_profile.pet_id,
-        link: pet_profile.link
+        current_pet: {
+          animal: current_pet.animal,
+          city: current_pet.city,
+          state: current_pet.state,
+          description: current_pet.description,
+          pet_id: current_pet.pet_id,
+          name: current_pet.name,
+          photo: current_pet.photo,
+          link: current_pet.link
+        },
+        pet_batch: [pet_batch]
       };
     default:
       console.log("no pet loaded");
